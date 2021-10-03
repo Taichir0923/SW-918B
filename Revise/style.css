@@ -1,0 +1,87 @@
+/* 
+    .className
+    #idName
+    tagName
+
+    pseudoclass
+
+
+*/
+
+
+/* 
+.header .menu ul li {
+    color: red;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.header .menu ul li.mod {
+    text-decoration: line-through;
+}
+
+.header .menu ul li.green {
+    color: green;
+}
+
+.header .menu ul li#txt {
+    margin: 2rem;
+} */
+
+/* Modify - өөрчлөх */
+
+/* 
+
+    float
+
+    flex
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    height: 100vh;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box {
+    min-width: 20%;
+    height: 25%;
+}
+
+.red {
+    background-color: red;
+}
+
+.right {
+    align-self: flex-end;
+    justify-content: flex-end !important;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.full {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+
+.h-full {
+    height: 100%;
+}
