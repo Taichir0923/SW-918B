@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+}
+
+.header__top {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+.flex-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-wrap #cal {
+    color: orangered;
+    margin-right: 5px;
+}
+
+.flex-wrap .exchange {
+    margin-left: 5px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.header__main {
+    width: 100%;
+}
+
+.header__main .bg-image {
+    background-image: url(https://content.ikon.mn/ikon/images/silhouette.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.header__nav {
+    width: 100%;
+    background-color: #454d62;
+    color: white;
+}
+
+.header__nav .navigation {
+    width: 90%;
+    justify-content: flex-start;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+/* #dedede */
+.header__nav .navigation li {
+    padding: 10px;
+    border-right: 1px solid #393f50;
+    border-left: 1px solid #545b6e;
+}
+.header__nav .navigation li.active {
+    background-color: rgba(0,0,0,.3);
+}
+
+.header__nav .navigation li.covid {
+    color: yellow
+}
+
+.header__nav .navigation li:hover {
+    color: #dedede;
+    cursor: pointer;
+}
+
+.header__nav .search input {
+    border: 3px solid #fd3e0a;
+    padding: 3px;
+}
+
+.header__nav .search button {
+    border: 3px solid #fd3e0a;
+    color: white;
+    background-color: #fd3e0a;
+    padding: 3px;
+
+}
+
+
+.main {
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.main .start {
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.main .sidebar {
+    width: 30%;
+    height: 200px;
+    background-color: black;
+}
+
+.main .content {
+    width: 70%;
+    height: 500px;
+    background-color: yellow;
+}
