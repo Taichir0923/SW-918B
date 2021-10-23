@@ -12,6 +12,10 @@
    desktop first - max-width: 1000px
 */
 
+html {
+    scroll-behavior: smooth;
+}
+
 .header {
     width: 100%;
     background-color: orangered;
@@ -19,6 +23,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
 }
 
 .header .logo {
@@ -30,19 +36,118 @@
 
 .header .logo img {
     width: 130px;
+    padding: 5px;
 }
 
-.menu__mobile {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
 
-.menu__mobile .line {
-    height: 3px;
-    width: 25px;
+.menu__mobile .toggle-btn {
+    width: 35px;
+    height: 35px;
     background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 1rem;
+    top: 5px;
+    z-index: 10;
+}
+
+.menu__mobile .toggle-btn .line {
+    height: 2px;
+    width: 50%;
+    background-color: #444;
+    position: relative;
+}
+
+.menu__mobile .toggle-btn .line::before,
+.menu__mobile .toggle-btn .line::after
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #444;
+    transition: .4s;
+}
+
+.menu__mobile .toggle-btn .line::before {
+    top: -5px;
+}
+
+.menu__mobile .toggle-btn .line::after {
+    bottom: -5px;
+}
+
+.menu__mobile .bg {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    right: 1rem;
+    background-color: orchid;
+    top: 5px;
+    border-radius: 50%;
+    transition: .5s ease;
+}
+
+.menu__mobile .navigation {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.menu__mobile .navigation ul li {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 200px;
+    text-align: center;
+    padding: 10px 1rem;
+    margin: 5px 0;
+    transition: .3s;
+}
+
+.menu__mobile .navigation ul li:hover {
+    color: orchid;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* adjacent selector + */
+
+.menu__mobile .toggle:checked + .btn .toggle-btn .line {
+    background-color: transparent;
+}
+
+.menu__mobile .toggle:checked + .btn .toggle-btn .line::before {
+    transform: rotate(315deg);
+    top: 0;
+}
+
+.menu__mobile .toggle:checked + .btn .toggle-btn .line::after {
+    transform: rotate(-315deg);
+    bottom: 0;
+}
+
+.menu__mobile .toggle:checked ~ .bg {
+    transform: scale(100)
+}
+
+.menu__mobile .toggle:checked ~ .navigation {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* .menu__mobile:hover {
@@ -68,16 +173,34 @@
     padding: 1rem 2rem;
     transition: .3s ease;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.menu__desktop li:hover {
+.menu__desktop li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu__desktop li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    top: 0;
+    right: 100%;
     background-color: white;
-    color: orangered;
+    transition: .4s ease;
+}
+
+.menu__desktop li:hover::before {
+    right: 0;
 }
 
 .main {
     width: 95%;
-    margin: 1.5rem auto;
+    margin: auto;
+    margin-top: 4rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 250px);
@@ -91,7 +214,7 @@
 
 .wrap {
     width: 95%;
-    margin: auto;
+    margin: 1rem auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -100,6 +223,10 @@
 .wrap .box {
     height: 250px;
     background-color: orangered;
+}
+
+.wrap:target {
+    background-color: black;
 }
 
 @media (min-width: 576px){

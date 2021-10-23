@@ -13,27 +13,48 @@
         </div>
 
         <div class="menu__mobile">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+            <input class="toggle" id="toggle" hidden type="checkbox">
+
+            <label class="btn" for="toggle">
+                <div class="toggle-btn">
+                    <div class="line"></div>
+                </div>
+            </label>
+
+            <div class="bg"></div>
+
+            <div class="navigation">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Service</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
         </div>
 
         <ul class="menu__desktop">
-            <li>Home</li>
+            <li>
+                <a href="#">Home</a>
+            </li>
             <li>About</li>
             <li>Service</li>
-            <li>Contact</li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
         </ul>
     </header>
 
     <main class="content">
         <div class="main">
-            <div class="box"></div>
+            <div class="box">
+                <h1 class="pseudo">Main el</h1>
+            </div>
             <div class="box"></div>
             <div class="box"></div>
         </div>
 
-        <div class="wrap">
+        <div id="contact" class="wrap">
             <div class="box"></div>
             <div class="box"></div>
             <div class="box"></div>
