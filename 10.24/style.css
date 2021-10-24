@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CLIP-PATH */
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.btn {
+    width: 300px;
+    height: 100px;
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    clip-path: polygon(0 0, 85% 0, 100% 35%, 100% 100%, 0 100%);
+    position: relative;
+}
+
+.btn::after {
+    content: 'Book now';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+    color: transparent;
+    clip-path: polygon(0 0, 85% 0, 100% 37%, 100% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    transition: .4s;
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    background-color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.btn::before {
+    content: 'Book now';
+    position: absolute;
+    transition: .4s;
+    clip-path: polygon(0 0, 85% 0, 100% 37%, 100% 100%, 0 100%);
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+    background-color: white;
+    z-index: -1;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn:hover::after {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover::before {
+    background-color: transparent
+}
+
+.btn1 {
+    width: 300px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn1::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+    background-color: white;
+}
+
+.btn1::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: yellow;
+    transform-origin: left top;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: conic-gradient(red 0% 33%, yellow 33% 66%, blue 66%);
+    animation: ergeh 2s linear infinite;
+}
+
+@keyframes ergeh {
+    from {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    to{
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+/* BOX-SHADOW */
+/* 5 button design */
+
+/* 
+    irts: 10%;
+    yvtsiin ajluud: 40%; => 5 site
+    biedaalt: 50%;
+*/
+
+/* 200/5 => 40 * 40 / 100 => 16 */
+
+/* 
+mnfansubs
+ikon
+lend
+*/

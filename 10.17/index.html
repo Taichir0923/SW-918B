@@ -1,73 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">
-            <img src="https://news.mn/wp-content/uploads/2018/08/Logo.svg" alt="">
-        </div>
+      <div class="logo">
+        <img src="https://news.mn/wp-content/uploads/2018/08/Logo.svg" alt="" />
+      </div>
 
-        <div class="menu__mobile">
-            <input class="toggle" id="toggle" hidden type="checkbox">
+      <div class="menu__mobile">
+        <input class="toggle" id="toggle" hidden type="checkbox" />
 
-            <label class="btn" for="toggle">
-                <div class="toggle-btn">
-                    <div class="line"></div>
-                </div>
-            </label>
+        <label class="btn" for="toggle">
+          <div class="toggle-btn">
+            <div class="line"></div>
+          </div>
+        </label>
 
-            <div class="bg"></div>
+        <div class="bg"></div>
 
-            <div class="navigation">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Service</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-        </div>
-
-        <ul class="menu__desktop">
-            <li>
-                <a href="#">Home</a>
-            </li>
+        <div class="navigation">
+          <ul>
+            <li>Home</li>
             <li>About</li>
             <li>Service</li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="menu__desktop">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>About</li>
+        <li>Service</li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
     </header>
 
-    <main class="content">
-        <div class="main">
-            <div class="box">
-                <h1 class="pseudo">Main el</h1>
-            </div>
-            <div class="box"></div>
-            <div class="box"></div>
+    <div id="contact" class="backdrop">
+      <div class="modal">
+        <div class="modal__header">
+          <h2>Бидэнтэй холбогдох</h2>
+          <button>
+            <a href="#">
+              <i class="fas fa-times"></i>
+            </a>
+          </button>
         </div>
+        <div class="modal__body"></div>
+        <div class="modal__footer"></div>
+      </div>
+    </div>
 
-        <div id="contact" class="wrap">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+    <main class="content">
+      <div class="main">
+        <div class="box">
+          <h1 class="pseudo">Main el</h1>
         </div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+
+      <div class="wrap">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
