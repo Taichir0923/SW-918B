@@ -10,6 +10,10 @@ body {
   font-size: 14px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header {
   width: 100%;
   background-color: #34495e;
@@ -38,6 +42,12 @@ body {
   color: white;
   text-decoration: none;
   font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .header__mobile {
+    display: none;
+  }
 }
 
 .header--blue {
@@ -114,10 +124,70 @@ body {
 .header .navigation .navList li:hover {
   background-color: white;
   color: #34495e;
+  cursor: pointer;
 }
 
 .header .navigation:target {
   left: 0;
   opacity: 1;
+}
+
+.header__desktop {
+  display: none;
+  list-style: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__desktop li {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.header__desktop li a {
+  color: white;
+  position: relative;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.header__desktop li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 4px;
+  background-color: white;
+  right: 100%;
+  -webkit-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.header__desktop li::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background-color: #34495e;
+  color: white;
+}
+
+.header__desktop li:hover::before {
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .header__desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 /*# sourceMappingURL=style.css.map */
