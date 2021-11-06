@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $mainColor;
+  font-size: 21px;
+  font-family: $alice;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $playfair;
+}
+
+a {
+    text-decoration: none;
+    font-family: $sacramento;
+}

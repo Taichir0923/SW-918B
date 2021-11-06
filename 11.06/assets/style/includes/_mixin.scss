@@ -1,0 +1,14 @@
+@mixin flex($direction, $justify, $items, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;;
+    align-items: $items;
+    gap: $gap;
+}
+
+@mixin shopTitle($color){
+    color: $color;
+    letter-spacing: .5em;
+    font-weight: normal;
+    font-size: 11.5px;
+}
