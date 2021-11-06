@@ -9,9 +9,6 @@
             width: 50px;
             margin: 0 10px;
         }
-        .shopTitle {
-            @include shopTitle($black);
-        }
     }
 
     .cart {

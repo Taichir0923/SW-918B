@@ -26,6 +26,13 @@ a {
   font-family: "Sacramento", cursive;
 }
 
+.shopTitle {
+  color: #000;
+  letter-spacing: .5em;
+  font-weight: normal;
+  font-size: 11.5px;
+}
+
 .header {
   width: 100%;
   background-color: #fff;
@@ -66,13 +73,6 @@ a {
 .header .logo__black {
   width: 50px;
   margin: 0 10px;
-}
-
-.header .logo .shopTitle {
-  color: #000;
-  letter-spacing: .5em;
-  font-weight: normal;
-  font-size: 11.5px;
 }
 
 .header .cart {
