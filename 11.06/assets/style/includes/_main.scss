@@ -1,0 +1,105 @@
+.main {
+    width: 100%;
+    margin: 1.5rem 0;
+    .section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        .products {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            .item {
+                width: 90%;
+                img {
+                    width: 100%;
+                }
+
+                .description {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 1.5rem;
+                    h1 {
+                        font-weight: normal;
+                        font-size: 36px;
+                        line-height: 1.25;
+                        width: 100%;
+                        border-bottom: 1px solid #c7c7c7;
+                        padding-bottom: 1.5rem;
+                        margin-bottom: 1rem;
+                        span {
+                            font-size: 60%;
+                            display: block;
+                        }
+                    }
+
+                    a {
+                        font-size: 36px;
+                        color: $mainColor;
+                        transition: .3s;
+                        &:hover {
+                            color: $hover;
+                        }
+                    }
+
+                    @media (min-width: 768px) {
+                        width: 250px !important;
+                        height: 250px !important;
+                    }
+
+                    @media (min-width: 1024px) {
+                        width: 300px !important;
+                        height: 300px !important;
+                    }
+
+                    @media (min-width: 1250px) {
+                        width: 350px !important;
+                        height: 350px !important;
+                    }
+                }
+            }
+
+            @media (min-width: 620px) {
+                flex-direction: row;
+                justify-content: space-evenly;
+                .item {
+                    width: 20%;
+                    position: relative;
+                    &:hover {
+                        .description {
+                            opacity: 1;
+                            visibility: visible;
+                            cursor: pointer;
+                            a {
+                                transform: translateY(0);
+                            }
+                        }
+                    }
+                    .description {
+                        transition: .4s;
+                        opacity: 0;
+                        visibility: hidden;
+                        width: 200px;
+                        height: 200px;
+                        position: absolute;
+                        padding: 1rem;
+                        border-radius: 50%;
+                        @include flex(column, center, center, 0);
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: white;
+                        background-color: $caption;
+                        a {
+                            color: white;
+                            transform: translateY(25px);
+                            transition-delay: .2s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

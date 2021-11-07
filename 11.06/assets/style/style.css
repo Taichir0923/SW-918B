@@ -110,7 +110,8 @@ a {
   height: 100vh;
   background-image: url(https://cdn.shopify.com/s/files/1/0261/4687/t/7/assets/img_homepage_slider1.jpg?v=839847293968337857);
   background-size: cover;
-  background-position: center;
+  background-position-x: center;
+  background-position-y: top;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,5 +126,159 @@ a {
       -ms-flex-align: center;
           align-items: center;
   gap: 0;
+}
+
+.main {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.main .section {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .section .products {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+}
+
+.main .section .products .item {
+  width: 90%;
+}
+
+.main .section .products .item img {
+  width: 100%;
+}
+
+.main .section .products .item .description {
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.main .section .products .item .description h1 {
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 1.25;
+  width: 100%;
+  border-bottom: 1px solid #c7c7c7;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.main .section .products .item .description h1 span {
+  font-size: 60%;
+  display: block;
+}
+
+.main .section .products .item .description a {
+  font-size: 36px;
+  color: #1d1a19;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main .section .products .item .description a:hover {
+  color: #c7d93b;
+}
+
+@media (min-width: 768px) {
+  .main .section .products .item .description {
+    width: 250px !important;
+    height: 250px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main .section .products .item .description {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}
+
+@media (min-width: 1250px) {
+  .main .section .products .item .description {
+    width: 350px !important;
+    height: 350px !important;
+  }
+}
+
+@media (min-width: 620px) {
+  .main .section .products {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .main .section .products .item {
+    width: 20%;
+    position: relative;
+  }
+  .main .section .products .item:hover .description {
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+  }
+  .main .section .products .item:hover .description a {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .main .section .products .item .description {
+    -webkit-transition: .4s;
+    transition: .4s;
+    opacity: 0;
+    visibility: hidden;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    padding: 1rem;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(29, 26, 25, 0.5);
+  }
+  .main .section .products .item .description a {
+    color: white;
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+    -webkit-transition-delay: .2s;
+            transition-delay: .2s;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@
     height: 100vh;
     background-image: url(https://cdn.shopify.com/s/files/1/0261/4687/t/7/assets/img_homepage_slider1.jpg?v=839847293968337857);
     background-size: cover;
-    background-position: center;
+    background-position-x: center;
+    background-position-y: top;
     @include flex(row, center, center, 0)
 }
