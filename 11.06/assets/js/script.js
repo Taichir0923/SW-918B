@@ -4,3 +4,6 @@ ScrollReveal().reveal(".section", {
     origin: "bottom"
 })
 // background-color => backgroundColor - camel case
+// Framework
+// Bootstrap
+// tailwind - high level
