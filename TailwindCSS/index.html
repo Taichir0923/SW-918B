@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="w-full flex justify-between items-center bg-indigo-500 uppercase text-white font-bold">
+        <h1 class="text-2xl ml-4">LOGO</h1>
+        <ul class="text-sm hidden md:flex">
+            <li class="py-4 px-8 transition duration-300 hover:text-indigo-500 hover:bg-white">Home</li>
+            <li class="py-4 px-8 transition duration-300 hover:text-indigo-500 hover:bg-white">About</li>
+            <li class="py-4 px-8 transition duration-300 hover:text-indigo-500 hover:bg-white">Service</li>
+            <li class="py-4 px-8 transition duration-300 hover:text-indigo-500 hover:bg-white">contact</li>
+        </ul>
+
+        <div class="p-4 md:hidden">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+    <main class="container my-4 mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+            <div class="h-48 bg-indigo-500 rounded-2xl border-4 border-indigo-500 bg-opacity-30"></div>
+        </div>
+    </main>
+</body>
+</html>
