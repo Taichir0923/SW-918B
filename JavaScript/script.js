@@ -148,21 +148,72 @@
         
         
         // if else if
-var nas = +prompt('Насаа оруул')
+// var nas = +prompt('Насаа оруул')
 
 // 0-12 huuhed
 // 13-17 osvor nas
 // 18-25 zaluu nas
 
-if(nas >= 0 && nas <= 12){
-    console.log('Huuhed')
-} else if (nas >= 13 && nas <= 17){
-    console.log('Osvor nas')
-} else if (nas >= 18 && nas <= 25){
-    console.log('Zaluu nas')
-} else {
-    console.log(nas + " нас")
-}
+// if(nas >= 0 && nas <= 12){
+//     console.log('Huuhed')
+// } else if (nas >= 13 && nas <= 17){
+//     console.log('Osvor nas')
+// } else if (nas >= 18 && nas <= 25){
+//     console.log('Zaluu nas')
+// } else {
+//     console.log(nas + " нас")
+// }
 
 // BMI = mass / height2
 // 63 / (1.65**2)
+
+// 1. Гараас 3ш тоо оруулаад хамгийн их тоог консолд хэвлэ
+// 2. Гараас 3ш тоо оруулаад сондгой тоонуудыг 2 дахин үржүүлж консолд хэвлэ
+
+// var x = +prompt('x')
+// var y = +prompt('y')
+// var z = +prompt('z')
+
+// if(x > y && x > z){
+//     console.log(x)
+// } else if (y > x && y > z){
+//     console.log(y)
+// } else {
+//     console.log(z)
+// }
+
+// true 1
+// false 0
+
+// if(x % 2){
+//     console.log('x: ' + x*2)
+// }
+// if(y % 2){
+//     console.log('y: ' + y*2)
+// }
+// if(z % 2){
+//     console.log('z: ' + z*2)
+// }
+
+// loop
+// string methods
+// index - 0 ,1 ,2
+
+// function
+
+// Non-Primitive - Object , Arrays , Regular Expression
+
+// E - 2.718
+// PI - 3.1415
+// LN - log e
+// LN10 - 1g
+// floor() - тооны бүхэл хэсгийг авах
+// pow(suuri , zereg) - тоог зэрэгт дэвшүүлнэ
+// sqrt(x) - тооноос язгуур гаргана
+// random() - 0-1 хооронд санамсаргүй байдлаар тоо гаргах
+// abs(x) - тооны авсолют утгыг гаргана
+
+// Гэрт
+
+// 1. Гараас тоо оруулаад хэдэн оронтой болохыг тоолж консолд хэвлэ
+// 2. 3-с дээш оронтой тоо оруулж, тухайн тооны сүүлээс 2 дахь цифрийг коснолд хэвлэ
