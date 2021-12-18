@@ -216,4 +216,41 @@
 // Гэрт
 
 // 1. Гараас тоо оруулаад хэдэн оронтой болохыг тоолж консолд хэвлэ
+// Тоог стринг болгож хөрвүүлээд уртыг нь шалгах
+// x.toString().length
+// Math => Math.floor(Math.log10(x)) + 1
+
+
 // 2. 3-с дээш оронтой тоо оруулж, тухайн тооны сүүлээс 2 дахь цифрийг коснолд хэвлэ
+// x.toString()[x.length - 2]
+// x.toString().charAt(x.length - 2)
+
+// Math.floor(x / 10) % 10
+
+// String methods
+// var x = prompt('Тоо оруул...')
+// trim() - trimLeft() , trimRight() , trimStart() , trimEnd()
+
+// index - character bolgoniig dugaarlaj bui dugaar
+// charAt - ymar ng index dr bgaa elementiig shalgah
+
+// Math 1
+
+// var x = 1234;
+
+// 2^3 = 8
+// logx8 = 3
+
+// Гараас стринг оруулаад сүүлээсээ 3 дахь элемент нь t үсэг байвал консолд true гэж хэвлэ. t биш байвал false гэж хэвлэ...
+
+// For Loop
+
+
+// for(counter ; condition ; operator)
+// for(var i = 0; i < z.toString().length; i++){
+//     console.log(z.toString()[i])
+// }
+
+for( var i = 0; i < 101; i++){
+    console.log(i)
+}
