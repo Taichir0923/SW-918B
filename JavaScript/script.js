@@ -369,12 +369,59 @@
 
 // reverse - массивыг урвуу хэлбэрт оруулна
 
-var arr1 = ['Hi' , 'there.' , 'My' , 'name' , 'is' , 'Narada.'];
+// var arr1 = ['Hi' , 'there.' , 'My' , 'name' , 'is' , 'Narada.'];
 // join - массивын өгөгдлүүдийг стринг болгож нийлүүлнэ;
 // join(separator) - separator => массивын өгөгдлүүд ямар тэмдэгтээр холбогдохыг заана
 
 
 // String split method
-var str = 'Hi there.';
+// concat - string bolon massiviig orgotgono
+// var str = 'Hi there. ';
+// var str1 = 'My name is Narada.';
 
-// 
+// slice - тодорхой хэсгийг тасдаж авна
+// slice(index , endIndex)
+
+// indexOf - өгөгдлийн индексийг шалгана
+// console.log(arr1.includes('Narada.'))
+// 12 13
+// 14 15
+
+// Non-Primitive Datatypes - Object
+// var ner = 'ner';
+
+// var obj = {
+//     ner: 'Narada',
+//     mergejil: 'Designer',
+//     email: 'narada@mail.com',
+//     password: '123'
+// }
+
+// var obj1 = {
+//     ner: 'John',
+//     mergejil: 'Designer',
+//     email: 'john@mail.com',
+//     password: '123'
+// }
+
+// obj.hobbies = ['Play game' , 'aylah' , 'duu sonsoh']
+
+// // push(val)
+
+// var users = [obj , obj1]
+
+// var email = prompt('Email address');
+// var password = prompt('password');
+
+// [{} , {} , {}]
+// 5ш хэрэглэгчийн обжектийг массив дотор хадгалаад, имэйлээр хайлт хийх программ бич.
+
+// for(var i = 0; i < users.length; i++){
+//     if(users[i].email === email){
+//         if(users[i].password === password){
+//             console.log('Welcome ' + users[i].ner)
+//         }
+//     }
+// }
+
+// Гэрт функцийн тухай судлана.
