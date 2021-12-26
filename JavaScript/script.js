@@ -335,7 +335,7 @@
 
 // test[1] = 'str'
 
-// test.splice(1)  
+// test.splice(index , ustgah too)  
 // splice - тодорхой тооны өгөгдлүүдийг устгана
 
 // map , forEach , filter , find , findIndex
@@ -345,3 +345,36 @@
 // 3. Массив үүсгээд дотор нь тоо стринг бүүлеан утгуудыг хадгалж стринг төрлийн өгөгдөл хэдэн ширхэг байгааг тоож харуул.
 // 4. Массив үүсгээд дотор нь тоо стринг бүүлеан утгуудыг хадгалж бүх бүүлеан өгөгдлүүдийг устга
 // 5. Массив үүсгээд дотор нь тоо стринг бүүлеан утгуудыг хадгалж, тоо стринг бүүлеан утгуудыг тус тусад нь шинэ массив дотор ангилан хадгал. str = [] , nums = [] , bools = []
+
+// var arr = ['str' , 'str1' , 'str2' , true , false , 124 , 12 , 98 , false , 'str3']; // 10
+
+// var strings = [];
+// var numbers = [];
+// var booleans = [];
+// var i = 0;
+// do {
+//     if(typeof arr[i] == 'string') {
+//         strings.push(arr[i])
+//     }
+
+//     if(typeof arr[i] == 'number') {
+//         numbers.push(arr[i])
+//     }
+
+//     if(typeof arr[i] == 'boolean'){
+//         booleans.push(arr[i])
+//     }
+//     i++;
+// } while (i < arr.length);
+
+// reverse - массивыг урвуу хэлбэрт оруулна
+
+var arr1 = ['Hi' , 'there.' , 'My' , 'name' , 'is' , 'Narada.'];
+// join - массивын өгөгдлүүдийг стринг болгож нийлүүлнэ;
+// join(separator) - separator => массивын өгөгдлүүд ямар тэмдэгтээр холбогдохыг заана
+
+
+// String split method
+var str = 'Hi there.';
+
+// 
