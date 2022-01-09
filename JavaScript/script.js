@@ -610,15 +610,15 @@
 
 // for in
 
-var obj = {
-    ner: "Narada",
-    mergejil: "Designer",
-    hobbies: ['reading' , 'watching']
-}
+// var obj = {
+//     ner: "Narada",
+//     mergejil: "Designer",
+//     hobbies: ['reading' , 'watching']
+// }
 
-for(var pro in obj){
-    console.log(obj[pro]);
-}
+// for(var pro in obj){
+//     console.log(obj[pro]);
+// }
 
 // obj['ner']
 
