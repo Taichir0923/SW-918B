@@ -633,3 +633,32 @@ for(var pro in obj){
 
 // параметр хэлбэрээр нас авдаг функц бичээд, decade тооцоод буцаах
 // f1(23) => "Та 2 decade амьдарсан байна..."
+
+
+// function bla(arg){
+//     // console.log(arg)
+// }
+
+
+function ex1(ner , nas){
+    return `Sainuu. Namaig ${ner} gedeg. Bi ${nas} nastai...`
+}
+
+function ex2(...strs){
+    var result = '';
+    var i = 0;
+    while(i < strs.length){
+        result = result.concat(strs[i]);
+        i++;
+    }
+    return result;
+}
+
+function ex21(...strs){
+    return strs.join('');
+}
+
+
+function countDecade(nas){
+    return "Ta " + parseInt(nas / 10) + " decade амьдарсан байна."
+}
