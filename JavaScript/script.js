@@ -640,25 +640,33 @@
 // }
 
 
-function ex1(ner , nas){
-    return `Sainuu. Namaig ${ner} gedeg. Bi ${nas} nastai...`
-}
+// function ex1(ner , nas){
+//     return `Sainuu. Namaig ${ner} gedeg. Bi ${nas} nastai...`
+// }
 
-function ex2(...strs){
-    var result = '';
-    var i = 0;
-    while(i < strs.length){
-        result = result.concat(strs[i]);
-        i++;
-    }
-    return result;
-}
+// function ex2(...strs){
+//     var result = '';
+//     var i = 0;
+//     while(i < strs.length){
+//         result = result.concat(strs[i]);
+//         i++;
+//     }
+//     return result;
+// }
 
-function ex21(...strs){
-    return strs.join('');
-}
+// function ex21(...strs){
+//     return strs.join('');
+// }
 
 
-function countDecade(nas){
-    return "Ta " + parseInt(nas / 10) + " decade амьдарсан байна."
-}
+// function countDecade(nas){
+//     return "Ta " + parseInt(nas / 10) + " decade амьдарсан байна."
+// }
+
+
+// Оролт: arr = [4 , 3 , 2 , 7 , 7 , 1 , 5], target = 9;
+// Гаралт: [0, 5 , 2 , 3 , 2 , 4]
+
+// https://leetcode.com
+// https://www.spoj.com
+// https://codeforces.mn , https://codeforces.com
