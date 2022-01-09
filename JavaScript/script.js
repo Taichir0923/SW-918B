@@ -425,3 +425,211 @@
 // }
 
 // Гэрт функцийн тухай судлана.
+
+// "     ns  bla    ";
+// "ns-bla"
+
+// var arr = ['fqa' , 'bla' , '123' , 'tre' , 'fqabla123tre'];
+
+// var str = '';
+// // while
+// // do while
+// let i = 0;
+
+// while(i < arr.length - 1){
+//     str = str.concat(arr[i]);
+//     i++;
+// }
+
+// if(str == arr.pop()){
+//     console.log(true)
+// } else {
+//     console.log(false)
+// }
+
+// function
+// reserved word - програмийн хэлэнд ашиглагддаг тусгай түлхүүр үг
+// f1(); // hoisting
+
+// {} - scope
+
+
+// var x = 15;
+
+// function f1(){
+//     console.log(23)
+// }
+
+// f1()
+
+// function printHello(){
+//     for(var i = 0; i < 100; i++){
+//         console.log(i + ": Hello");
+//     }
+// }
+
+// printHello()
+
+// function countZero(){
+//     var x = +prompt('x');
+//     var y = +prompt('y');
+//     var z = +prompt('z');
+
+//     var counter = 0;
+
+//     if(x == 0){
+//         counter++;
+//     }
+
+//     if(y == 0){
+//         counter++;
+//     }
+
+//     if(z == 0){
+//         counter++
+//     }
+    
+//     return counter;
+// }
+
+// function f2(){
+//     return 5;
+// }
+
+// var f3 = f2;
+
+
+// nas tootsonh function
+
+
+
+// function nasToots(arg, arg1 , arg2){
+//     var sum = 0;
+//     if(arg % 2 == 1){
+//         sum += arg;
+//     }
+
+//     if(arg1 % 2 == 1){
+//         sum += arg1;
+//     }
+
+//     if(arg2 % 2 == 1){
+//         sum += arg2;
+//     }
+
+//     return sum
+// }
+
+// function ex8(num){
+//     var counter = 0;
+
+//     var too = num.toString();
+
+//     for(var i = 0; i < too.length; i++){
+//         if(+too[i] % 3 === 0){
+//             counter++
+//         }
+//     }
+
+//     return counter;
+// }
+
+// callstack , нэг функц дотор өөр нэг функцийг дуудах
+// recursive stack
+// callback
+
+// Stack - LIFO - Last in First out
+
+// paranthesis balance
+// [[(){}]{}]
+
+// function f1(){
+//     f2()
+// }
+
+// function f2(){
+//     console.log('hi');
+//     f3();
+// }
+
+// function f3(){
+//     console.log('there')
+// }
+
+// function f1(){
+//     f1();
+// }
+
+// function sumUpTo(too){
+//     if(too === 1){
+//         return too
+//     }
+//     return too + sumUpTo(too - 1)
+// }
+
+// function isEven(num){
+//     if(num % 2 == 0){
+//         return true;
+//     }
+
+//     return false
+// };
+
+// default parameter
+// function f1(arg=0){
+//     return arg
+// }
+
+// // spread operator ( ... )
+
+// var arr = [12 , 13 , 14];
+
+// var arr1 = [11 , ...arr , 15];
+
+// var obj = {
+//     ner: "Narada",
+//     mergejil: "Designer"
+// }
+
+// var obj1 = {
+//     ...obj,
+//     ner: "Purev",
+//     hobbies: ['reading' , 'watching']
+// }
+
+
+// rest parameter
+
+// function testRestParams (...arguments){
+//     var i = 0;
+//     while(i < arguments.length){
+//         console.log(arguments[i])
+//         i++;
+//     }
+// }
+
+// for in
+
+var obj = {
+    ner: "Narada",
+    mergejil: "Designer",
+    hobbies: ['reading' , 'watching']
+}
+
+for(var pro in obj){
+    console.log(obj[pro]);
+}
+
+// obj['ner']
+
+// нэр болон нас параметр хэлбэрээр авдаг функц бичээд, нэр насаа
+// нэг стринг болгож буцаа...
+// f1(ner , nas) => "Sainuu bi bol ner. Bi nas nastai"
+
+// хэрэв функц дотор 2 болон түүнээс их параметр хувьсагч орж ирдэг
+// гэж үзвэл, тухайн функцийн бүх паратрийг нэг стринг болгож буцаа
+// f1("hi" , "bbl" , "12" , "blfkjsdlk") => "hibbl12blfkjsdlk"
+
+
+// параметр хэлбэрээр нас авдаг функц бичээд, decade тооцоод буцаах
+// f1(23) => "Та 2 decade амьдарсан байна..."
