@@ -670,3 +670,77 @@
 // https://leetcode.com
 // https://www.spoj.com
 // https://codeforces.mn , https://codeforces.com
+
+// гараас тоо оруулж, 0-н тоог пирамид хэлбэрээр консолд хэвлэ. Пирамидийн суурь оруулсан
+// тоотой ижил байна.
+
+// жишээ: enterNum(5)
+// 0
+// 00
+// 000
+// 0000
+// 00000
+
+
+// makeTriangle(4)
+// 0
+// 00
+// 000
+// 0000
+// 000
+// 00
+// 0
+
+function sumUpTo(num){
+    var sum = 0;
+    for(var i = 1; i <= num; i++){
+        sum += i;
+    }
+
+    return sum
+}
+
+function recursiveSum(num){
+    if(num === 1){
+        return num;
+    }
+    return num + recursiveSum(num - 1)
+}
+
+function formulaSum(num){
+    var start = 1;
+    var end = num;
+    var count = num;
+    var sum = (start + end) / 2 * count;
+
+    return sum;
+}
+
+// sumUpTo
+// Эхлэнэ
+// 1. sum = 0 хувьсагч зарлах
+// 2. оруулсан тоо хүртэл давт
+// 3. давталт бүрийн утгыг 2-р хувьсагч руу нэмэх
+// 4. 2-р хувьсагчийг буцаа
+// төгсөнө
+
+// Divide and Conquer
+
+
+
+// 7-р дасгал
+
+function makeTri(num){
+    var flr = num * 2;
+    var valToPrint = '';
+    for(var i = 1; i < flr; i++){
+        if(i <= num){
+            valToPrint += 0;
+        } else {
+            valToPrint = valToPrint.slice(0 , -1);
+            // break;
+        }
+
+        console.log(valToPrint)
+    }
+}
