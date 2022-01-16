@@ -817,3 +817,12 @@ function ex8(arr){
     return false;
 }
 
+var arr = [23, 1 ,23, 2 , 4 , 90];
+// arr.sort(function(a , b){ return b - a})
+
+// filter
+// reduce 
+// map
+// find
+// findIndex
+// forEach
