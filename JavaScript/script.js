@@ -730,17 +730,90 @@ function formulaSum(num){
 
 // 7-р дасгал
 
-function makeTri(num){
-    var flr = num * 2;
-    var valToPrint = '';
-    for(var i = 1; i < flr; i++){
-        if(i <= num){
-            valToPrint += 0;
+// function makeTri(num){
+//     var flr = num * 2;
+//     var valToPrint = '';
+//     for(var i = 1; i < flr; i++){
+//         if(i <= num){
+//             valToPrint += 0;
+//         } else {
+//             valToPrint = valToPrint.slice(0 , -1);
+//             // break;
+//         }
+
+//         console.log(valToPrint)
+//     }
+// }
+var obj = {
+    ner: "Narada",
+    mergejil: "designer",
+    hobbies: ['a' , 'b' , 'c']
+}
+
+for(var pro in obj){
+    console.log(obj[pro])
+}
+
+function ex4(o){
+    var vals = [];
+    var pros = [];
+    for(var pro in o){
+        pros.push(pro);
+        vals.push(o[pro]);
+    }
+
+    return [pros , vals]
+}
+
+function rest(...boxes){
+    var sum = 0;
+    for(var i = 0; i < boxes.length; i++){
+        var volume = 1;
+        if(boxes[i].length === 3){
+            for(var j = 0; j < boxes[i].length; j++){
+                volume *= boxes[i][j];
+            }
         } else {
-            valToPrint = valToPrint.slice(0 , -1);
-            // break;
+            volume = 0;
         }
 
-        console.log(valToPrint)
+        sum += volume
     }
+
+    return sum;
 }
+
+function ex8(arr){
+    var even = [];
+    var odds = [];
+    var isEven = true;
+    var isOdd = true;
+    for(var i = 0; i < arr.length; i++){
+        if(i % 2 === 0){
+            even.push(arr[i])
+        } else {
+            odds.push(arr[i])
+        }
+    }
+
+    for(var j = 0; j < even.length; j++){
+        if(even[j] % 2){
+            isEven = false;
+            break;
+        }
+    }
+
+    for(var o = 0; o < odds.length; o++){
+        if(odds[o] % 2 === 0){
+            isOdd = false;
+            break;
+        }
+    }
+
+    if(isEven && isOdd){
+        return true;
+    }
+
+    return false;
+}
+
