@@ -101,3 +101,92 @@ function selectionSort(arr , isReverse){
 }
 
 // Гэрт: Insertion sort , Quick sort
+
+// Merge Sort , Radix Sort
+
+// [234 , 12 , 1 , 23 , 56 , 99 , 11 , 100];
+
+// [234 , 12 , 1 , 23] , [56 , 99 , 11 , 100]
+// [234 , 12] [1 , 23]  ,  [56 , 99] [11 , 100]
+// [234] [12]  [1] [23]  ,   [56] [99]  [11] [100]
+// [12 , 234]  [1 , 23]  ,   [56 , 99]  [11 , 100]
+// [1, 12 , 23 , 234]  ,  [11 , 56 , 99 , 100]
+// [1 , 11 , 12 , 23 , 56 , 99 , 100 , 234]
+
+function mergeArrays(left , right){
+    var result = [];
+    var i = 0;
+    var j = 0;
+
+    while(i < left.length && j < right.length){
+        if(left[i] < right[j]){
+            result.push(left[i]);
+            i++;
+        } else {
+            result.push(right[j]);
+            j++;
+        }
+    }
+
+    result = result.concat(left.slice(i));
+
+    result = result.concat(right.slice(j));
+
+
+    return result;
+}
+
+// [23 , 45 , 2 , 6]
+//  0    1    2   3
+
+// [23 , 45 , 2 , 7 , 1]; 2
+// [23 , 45]   [2 , 7 , 1]
+
+function mergeSort(arr){
+    if(arr.length === 1){
+        return arr;
+    }
+    var mid = Math.floor(arr.length/2);
+    var left = mergeSort(arr.slice(0 , mid));
+    var right = mergeSort(arr.slice(mid));
+
+    return mergeArrays(left , right);
+}
+
+// Radix sort
+
+function getDigit(num , i){
+    return Math.floor(Math.abs(num) / Math.pow(10 , i)) % 10;
+}
+
+function countDigits(num){
+    return Math.floor(Math.log10(Math.abs(num))) + 1
+}
+
+function findMax(arr){
+    var max = 0;
+
+    for(var i = 0; i < arr.length; i++){
+        max = Math.max(max , arr[i]);
+    }
+
+    return max;
+}
+
+function radixSort(arr){
+    const max = findMax(arr);
+    const numToLoop = countDigits(max);
+    for(var i = 0; i < numToLoop; i++){
+        const buckets = Array.from({length: 10} , function(){ return [] });
+        for(var j = 0; j < arr.length; j++){
+            var whichPlace = getDigit(arr[j] , i);
+            buckets[whichPlace].push(arr[j]);
+        }
+
+        arr = [].concat(...buckets);
+    }
+
+    return arr;
+}
+
+// leetcode.com 23-р дасгалыг хийх...
