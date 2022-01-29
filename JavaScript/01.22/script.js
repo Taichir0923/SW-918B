@@ -255,7 +255,9 @@ function sumMatrices(...matrices){
     });
 
     for(var mat = 0; mat < matrices.length; mat++){
-        console.log(matrices[mat]);
+        for(var row = 0; row < matrices[mat].length; row++){
+            // Гэрт гүйцээх
+        }
     }
 
     return C;
