@@ -251,12 +251,20 @@ function sumMatrices(...matrices){
     }
 
     C = Array.from({length: dimentions[0].row} , function(){
-        return [];
+        var result = [];
+        var k = 0;
+        do {
+            result.push(0);
+            k++;
+        } while (k < dimentions[0].column)
+        return result;
     });
 
     for(var mat = 0; mat < matrices.length; mat++){
         for(var row = 0; row < matrices[mat].length; row++){
-            // Гэрт гүйцээх
+            for(var col = 0; col < matrices[mat][row].length; col++){
+                C[row][col] += matrices[mat][row][col];
+            }
         }
     }
 
@@ -286,3 +294,18 @@ function equalDimensions(arr){
 
     return isEqual
 }
+
+// [
+//  [12 , 32]
+//  [24 , 25]
+// ]
+// 
+// [
+//  [12 , 32]
+//  [24 , 25]
+// ]
+// 
+// [
+//  [24 , 64]
+//  [48 , 50]
+// ]
