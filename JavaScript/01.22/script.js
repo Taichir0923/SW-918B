@@ -349,3 +349,235 @@ function multiple(matrix , num){
  * 2A * 3B - 5A * 7B - 6C
  * 
  */
+// ES5 => 2009
+// ES6 => 2015
+// ES12
+
+// variable in es5
+// var x = 5;
+
+
+// var in es6
+// let y = 12;
+
+// {
+//     let myVar = 23;
+//     console.log(myVar)
+// }
+
+
+// contant variable
+// const y = 12;
+
+// "" , 'fds'
+// ``
+
+// console.log(`my var is ${y} fkldjs`);
+
+// arrow function
+
+// const myFunction = () => {
+//     console.log('hi');
+// };
+
+// const testArrowfunction = () => 12
+
+// function bubbleSort(arr , isReverse){
+//     var swapped = true;
+//     for(var i = arr.length - 1; i >= 0; i--){
+//         swapped = false;
+//         for(var j = 0; j < i; j++){
+//             if(isReverse){
+//                 if(arr[j] < arr[j+1]){
+//                     var temp = arr[j];
+//                     arr[j] = arr[j+1];
+//                     arr[j+1] = temp;
+//                     swapped = true;
+//                 }
+//             } else {
+//                 if(arr[j] > arr[j+1]){
+//                     var temp = arr[j];
+//                     arr[j] = arr[j+1];
+//                     arr[j+1] = temp;
+//                     swapped = true;
+//                 }
+//             }
+//         }
+//         if(!swapped){
+//             break;
+//         }
+//     }
+
+//     return arr;
+// }
+
+const bubbleSort = (arr , isReverse) => {
+    let swapped = true;
+    for(let i = arr.length - 1; i >= 0; i--){
+        swapped = false;
+        for(let j = 0; j < i; j++){
+            if(isReverse){
+                if(arr[j] < arr[j+1]){
+                    let temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    swapped = true;
+                }
+            } else {
+                if(arr[j] > arr[j+1]){
+                    let temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    swapped = true;
+                }
+            }
+        }
+        if(!swapped){
+            break;
+        }
+    }
+    return arr;
+}
+
+// function - declarative
+
+// let - imparative 
+
+// testFunc() // hoisting
+
+// let testFunc = () => {
+//     console.log('hi')
+// }
+
+
+// callback function
+
+// function myFunction(arg , ner){
+//     arg(ner);
+// }
+
+// myFunction((ner) => {
+//     console.log(ner)
+// } , 'bla');
+
+// setTimeout((arg) => {
+//     console.log(arg)
+// } , 5000 , "param")
+
+// var x = 0;
+
+// setInterval(() => {
+//     console.log(x);
+//     x++;
+// } , 1000)
+
+
+
+// object function
+
+// this keyword
+
+let object = {
+    pro: function(){
+        console.log(this)
+    },
+
+    testObjecteFunction(){
+        console.log(this)
+    }
+}
+
+// destructure in es6
+
+// array destruction
+// let array = [12 , 14 , 15];
+// let [,,z] = array;
+
+
+// object destruction
+// let object = {
+//     ner: "Narada",
+//     mergejil: "Designer"
+// }
+
+// let {mergejil} = object;
+
+// 
+
+// let {pro} = object;
+
+// callback
+// forEach , map , filter , find , findIndex
+
+// forEach - davtalt
+let array = [123 , 34 , 54 , 32 , 432 , 100 , 56];
+
+// array.forEach(function(el , index){
+//     console.log(index , el)
+// })
+
+// map - шинэ массив үүсгэж өгнө
+// massiviin ogogdliig indexeer n urjuuleed shine massiv uusge
+let mappedArray = array.map((el , index) => el * index);
+
+// filter - todorhoi nohtsol hangasan ogogdluudiig tsgluulj
+// shine massiv uusgene
+let filteredArray = array.filter((el) => el < 100);
+
+
+// find - massiv dotroos ogogdol haina...
+let item = array.find((el) => el == 100);
+
+
+// findIndex;
+let itemIndex = array.findIndex((el) => el == 100);
+
+/**
+ * 
+ * {
+ *   ner: "",
+ *   email: "",
+ *   utas: 
+ * }
+ */
+
+let users = [
+    {
+        ner: "Narada",
+        email: "narada@mail.com"
+    },
+    {
+        ner: "John",
+        email: "john@mail.com"
+    },
+    {
+        ner: "Anna",
+        email: "anna@mail.com"
+    }
+]
+
+// 10 хэрэглэгчийн датаг массив дотор хадгалаад, дараахь функцуудыг бич
+
+// 1. Хэрэглэгч имэйлээр хайж олон тухай хэрэглэгчийн датаг өөрчлөх
+
+function updateUserData(email , updatedEmail , updatedNer){
+
+}
+
+// 2. Хэрэглэгч имэйлээр хайж олоод, тухайн хэрэглэгчийн датаг устгах
+
+function deleteUser(email){
+    const updatedUsersList = users.filter(user => user.email !== email);
+    users = [...updatedUsersList]
+}
+
+let usr = {
+    ner: "nkfdls",
+    email: "jgkdf"
+}
+
+let updatedUser = {
+    ...usr,
+    ner: "Narada",
+    utas: 99009987
+}
