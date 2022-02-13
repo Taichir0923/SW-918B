@@ -191,109 +191,109 @@
 
 // // leetcode.com 23-р дасгалыг хийх...
 
-// MATRIX - Матриц
-var matrix = [
-    [12 , 13], // [0][2]
-    [11 , 5],
-    [11 , 5]
-] // mor , bagana
+// // MATRIX - Матриц
+// var matrix = [
+//     [12 , 13], // [0][2]
+//     [11 , 5],
+//     [11 , 5]
+// ] // mor , bagana
 
-var matrix1 = [
-    [2 , 4 , 1],
-    [23 , 1 , 5],
-    [13 , 4 , 3]
-]
+// var matrix1 = [
+//     [2 , 4 , 1],
+//     [23 , 1 , 5],
+//     [13 , 4 , 3]
+// ]
 
-var c = [
-    [14 , 17 , 24],
-    [34 , 6 , 128],
-    [24 , 9 , 126]
-]
+// var c = [
+//     [14 , 17 , 24],
+//     [34 , 6 , 128],
+//     [24 , 9 , 126]
+// ]
 
-function sumMatrix(A , B){
-    var C;
-    var aDimension = calculateDimension(A);
-    var bDimension = calculateDimension(B);
+// function sumMatrix(A , B){
+//     var C;
+//     var aDimension = calculateDimension(A);
+//     var bDimension = calculateDimension(B);
 
-    if(aDimension.row === bDimension.row && aDimension.column === bDimension.column){
-        C = Array.from({length: aDimension.row} , function(){
-            return [];
-        });
-        for(var row = 0; row < A.length; row++){
-            for(var column = 0; column < A[row].length; column++){
-                var el = A[row][column] + B[row][column];
-                C[row].push(el);
-            }
-        }
-    } else {
-        return "Invalid dimensions"
-    }
+//     if(aDimension.row === bDimension.row && aDimension.column === bDimension.column){
+//         C = Array.from({length: aDimension.row} , function(){
+//             return [];
+//         });
+//         for(var row = 0; row < A.length; row++){
+//             for(var column = 0; column < A[row].length; column++){
+//                 var el = A[row][column] + B[row][column];
+//                 C[row].push(el);
+//             }
+//         }
+//     } else {
+//         return "Invalid dimensions"
+//     }
 
-    return C;
-}
+//     return C;
+// }
 
-function sumMatrices(...matrices){
-    var C;
-    var dimentions = [];
-    var isEqual;
-    if(matrices.length === 1){
-        return matrices[0];
-    }
-    for(var i = 0; i < matrices.length; i++){
-        var dimension = calculateDimension(matrices[i]);
-        dimentions.push(dimension);
-    }
+// function sumMatrices(...matrices){
+//     var C;
+//     var dimentions = [];
+//     var isEqual;
+//     if(matrices.length === 1){
+//         return matrices[0];
+//     }
+//     for(var i = 0; i < matrices.length; i++){
+//         var dimension = calculateDimension(matrices[i]);
+//         dimentions.push(dimension);
+//     }
 
-    isEqual = equalDimensions(dimentions);
+//     isEqual = equalDimensions(dimentions);
 
-    if(!isEqual){
-        return "Invalid dimensions"
-    }
+//     if(!isEqual){
+//         return "Invalid dimensions"
+//     }
 
-    C = Array.from({length: dimentions[0].row} , function(){
-        var result = [];
-        var k = 0;
-        do {
-            result.push(0);
-            k++;
-        } while (k < dimentions[0].column)
-        return result;
-    });
+//     C = Array.from({length: dimentions[0].row} , function(){
+//         var result = [];
+//         var k = 0;
+//         do {
+//             result.push(0);
+//             k++;
+//         } while (k < dimentions[0].column)
+//         return result;
+//     });
 
-    for(var mat = 0; mat < matrices.length; mat++){
-        for(var row = 0; row < matrices[mat].length; row++){
-            for(var col = 0; col < matrices[mat][row].length; col++){
-                C[row][col] += matrices[mat][row][col];
-            }
-        }
-    }
+//     for(var mat = 0; mat < matrices.length; mat++){
+//         for(var row = 0; row < matrices[mat].length; row++){
+//             for(var col = 0; col < matrices[mat][row].length; col++){
+//                 C[row][col] += matrices[mat][row][col];
+//             }
+//         }
+//     }
 
-    return C;
-}
+//     return C;
+// }
 
-function calculateDimension(matrix){
-    var row , column;
-    row = matrix.length;
-    column = matrix[0].length;
-    return {
-        row: row,
-        column: column
-    }
-}
+// function calculateDimension(matrix){
+//     var row , column;
+//     row = matrix.length;
+//     column = matrix[0].length;
+//     return {
+//         row: row,
+//         column: column
+//     }
+// }
 
-function equalDimensions(arr){
-    var isEqual = true;
-    var row = arr[0].row;
-    var column = arr[0].column;
-    for(var i = 1; i < arr.length; i++){
-        if(arr[i].row !== row || arr[i].column !== column){
-            isEqual = false;
-            break;
-        }
-    }
+// function equalDimensions(arr){
+//     var isEqual = true;
+//     var row = arr[0].row;
+//     var column = arr[0].column;
+//     for(var i = 1; i < arr.length; i++){
+//         if(arr[i].row !== row || arr[i].column !== column){
+//             isEqual = false;
+//             break;
+//         }
+//     }
 
-    return isEqual
-}
+//     return isEqual
+// }
 
 // [
 //  [12 , 32]
@@ -310,18 +310,18 @@ function equalDimensions(arr){
 //  [48 , 50]
 // ]
 
-function multiple(matrix , num){
-    if(!num || num === 1){
-        return matrix;
-    }
-    for(var row = 0; row < matrix.length; row++){
-        for(var col = 0; col < matrix[row].length; col++){
-            matrix[row][col] *= num;
-        }
-    }
+// function multiple(matrix , num){
+//     if(!num || num === 1){
+//         return matrix;
+//     }
+//     for(var row = 0; row < matrix.length; row++){
+//         for(var col = 0; col < matrix[row].length; col++){
+//             matrix[row][col] *= num;
+//         }
+//     }
 
-    return matrix;
-}
+//     return matrix;
+// }
 
 /**
  * 2 матрицийг үржүүлэхэд эхний матрицийн мөр нь 2 дахь матрицийн
@@ -411,33 +411,33 @@ function multiple(matrix , num){
 //     return arr;
 // }
 
-const bubbleSort = (arr , isReverse) => {
-    let swapped = true;
-    for(let i = arr.length - 1; i >= 0; i--){
-        swapped = false;
-        for(let j = 0; j < i; j++){
-            if(isReverse){
-                if(arr[j] < arr[j+1]){
-                    let temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                    swapped = true;
-                }
-            } else {
-                if(arr[j] > arr[j+1]){
-                    let temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                    swapped = true;
-                }
-            }
-        }
-        if(!swapped){
-            break;
-        }
-    }
-    return arr;
-}
+// const bubbleSort = (arr , isReverse) => {
+//     let swapped = true;
+//     for(let i = arr.length - 1; i >= 0; i--){
+//         swapped = false;
+//         for(let j = 0; j < i; j++){
+//             if(isReverse){
+//                 if(arr[j] < arr[j+1]){
+//                     let temp = arr[j];
+//                     arr[j] = arr[j+1];
+//                     arr[j+1] = temp;
+//                     swapped = true;
+//                 }
+//             } else {
+//                 if(arr[j] > arr[j+1]){
+//                     let temp = arr[j];
+//                     arr[j] = arr[j+1];
+//                     arr[j+1] = temp;
+//                     swapped = true;
+//                 }
+//             }
+//         }
+//         if(!swapped){
+//             break;
+//         }
+//     }
+//     return arr;
+// }
 
 // function - declarative
 
@@ -477,15 +477,15 @@ const bubbleSort = (arr , isReverse) => {
 
 // this keyword
 
-let object = {
-    pro: function(){
-        console.log(this)
-    },
+// let object = {
+//     pro: function(){
+//         console.log(this)
+//     },
 
-    testObjecteFunction(){
-        console.log(this)
-    }
-}
+//     testObjecteFunction(){
+//         console.log(this)
+//     }
+// }
 
 // destructure in es6
 
@@ -510,7 +510,7 @@ let object = {
 // forEach , map , filter , find , findIndex
 
 // forEach - davtalt
-let array = [123 , 34 , 54 , 32 , 432 , 100 , 56];
+// let array = [123 , 34 , 54 , 32 , 432 , 100 , 56];
 
 // array.forEach(function(el , index){
 //     console.log(index , el)
@@ -518,19 +518,19 @@ let array = [123 , 34 , 54 , 32 , 432 , 100 , 56];
 
 // map - шинэ массив үүсгэж өгнө
 // massiviin ogogdliig indexeer n urjuuleed shine massiv uusge
-let mappedArray = array.map((el , index) => el * index);
+// let mappedArray = array.map((el , index) => el * index);
 
 // filter - todorhoi nohtsol hangasan ogogdluudiig tsgluulj
 // shine massiv uusgene
-let filteredArray = array.filter((el) => el < 100);
+// let filteredArray = array.filter((el) => el < 100);
 
 
 // find - massiv dotroos ogogdol haina...
-let item = array.find((el) => el == 100);
+// let item = array.find((el) => el == 100);
 
 
 // findIndex;
-let itemIndex = array.findIndex((el) => el == 100);
+// let itemIndex = array.findIndex((el) => el == 100);
 
 /**
  * 
@@ -541,43 +541,43 @@ let itemIndex = array.findIndex((el) => el == 100);
  * }
  */
 
-let users = [
-    {
-        ner: "Narada",
-        email: "narada@mail.com"
-    },
-    {
-        ner: "John",
-        email: "john@mail.com"
-    },
-    {
-        ner: "Anna",
-        email: "anna@mail.com"
-    }
-]
+// let users = [
+//     {
+//         ner: "Narada",
+//         email: "narada@mail.com"
+//     },
+//     {
+//         ner: "John",
+//         email: "john@mail.com"
+//     },
+//     {
+//         ner: "Anna",
+//         email: "anna@mail.com"
+//     }
+// ]
 
 // 10 хэрэглэгчийн датаг массив дотор хадгалаад, дараахь функцуудыг бич
 
 // 1. Хэрэглэгч имэйлээр хайж олон тухай хэрэглэгчийн датаг өөрчлөх
 
-function updateUserData(email , updatedEmail , updatedNer){
+// function updateUserData(email , updatedEmail , updatedNer){
 
-}
+// }
 
 // 2. Хэрэглэгч имэйлээр хайж олоод, тухайн хэрэглэгчийн датаг устгах
 
-function deleteUser(email){
-    const updatedUsersList = users.filter(user => user.email !== email);
-    users = [...updatedUsersList]
-}
+// function deleteUser(email){
+//     const updatedUsersList = users.filter(user => user.email !== email);
+//     users = [...updatedUsersList]
+// }
 
-let usr = {
-    ner: "nkfdls",
-    email: "jgkdf"
-}
+// let usr = {
+//     ner: "nkfdls",
+//     email: "jgkdf"
+// }
 
-let updatedUser = {
-    ...usr,
-    ner: "Narada",
-    utas: 99009987
-}
+// let updatedUser = {
+//     ...usr,
+//     ner: "Narada",
+//     utas: 99009987
+// }
