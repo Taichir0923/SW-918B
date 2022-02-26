@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <style>
+        #title {
+            color: red;
+        }
+
+        .img {
+            width: 100%;
+        }
+
+        .border {
+            border: 2px solid #000;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+    </style>
 </head>
 <body>
     
@@ -14,8 +33,9 @@
 
     <img style="display: block; width: 100%;" src="" id="zurag" alt=""> -->
 
-    <h1 onmouseenter="mouseEnter()" onmouseleave="mouseLeave()" id="title">Test</h1>
-
+    <!-- <h1 onmouseenter="mouseEnter()" onmouseleave="mouseLeave()" id="title">Test</h1> -->
+    <div class="container"></div>
+    <input multiple type="file" id="files">
     <script src="script.js"></script>
 </body>
 </html>
