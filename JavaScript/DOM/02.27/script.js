@@ -59,11 +59,11 @@
 
 // ymar special char bgaa esehiig shalga... !@#$%&*(-=+) ,.
 
-// function countElements(inp){
-//     if(inp.value.length >= 5){
-//         console.log('Done!!!')
-//     }
-// }
+function countElements(inp){
+    if(inp.value.length >= 5){
+        console.log('Done!!!')
+    }
+}
 
 
 // email - zov email esehiig shalgah
