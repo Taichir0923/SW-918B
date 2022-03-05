@@ -59,11 +59,11 @@
 
 // ymar special char bgaa esehiig shalga... !@#$%&*(-=+) ,.
 
-function countElements(inp){
-    if(inp.value.length >= 5){
-        console.log('Done!!!')
-    }
-}
+// function countElements(inp){
+//     if(inp.value.length >= 5){
+//         console.log('Done!!!')
+//     }
+// }
 
 
 // email - zov email esehiig shalgah
@@ -78,3 +78,28 @@ function countElements(inp){
 // QUIZ
 // Image gallery
 // Form Validator
+
+// const btn = document.querySelector('#btn');
+// const name = document.querySelector('#name');
+// const number = document.querySelector('#number');
+
+// function checkIfFormIsEmpty(input , condition) {
+//     if(condition){
+//         input.classList.remove('error')
+//     } else {
+//         input.classList.add('error')
+//     }
+// }
+
+// btn.onclick = function(){
+//     checkIfFormIsEmpty(name , name.value !== "");
+//     // checkIfFormIsEmpty(number , );
+// }
+
+// name.oninput = function(){
+//     checkIfFormIsEmpty(name, /[A-Z]/.test(name.value))
+// }
+
+// number.oninput = function(){
+//     checkIfFormIsEmpty(number , name.value === number.value);
+// }
