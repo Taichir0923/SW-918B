@@ -5,10 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input:focus {
+            outline: none;
+        }
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <form>
-        <button id="btn">press</button>
+        <div class="flex">
+            <label for="firstname">Firstname</label>
+            <input type="text" id="firstname">
+        </div>
+        <div class="flex">
+            <label for="lastname">Lastname</label>
+            <input type="text" id="lastname">
+        </div>
+        <div class="flex">
+            <label for="number">Number</label>
+            <input type="number" id="number">
+        </div>
+        <div class="flex">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+        </div>
+        <button id="btn">Register</button>
     </form>
     <script src="script.js"></script>
 </body>

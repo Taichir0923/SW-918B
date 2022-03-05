@@ -4,19 +4,34 @@
 // click , change , load , input
 
 const btn = document.querySelector('#btn');
+const firstname = document.querySelector('#firstname');
+const lastname = document.querySelector('#lastname');
+const number = document.querySelector('#number');
+const password = document.querySelector('#password');
 
-function printSth(){
-    console.log('hi')
+class User {
+    constructor(firstname , lastname , number , password){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.number = number;
+        this.password = password;
+    }
 }
+const users = [];
 
 btn.addEventListener('click' , function(event){
     event.preventDefault();
-    printSth();
+    const user = new User(firstname.value , lastname.value , number.value , password.value);
+    users.push(user);
+    localStorage.setItem("users" , JSON.stringify(users));
 });
 
 // хэрэглэгч бүртгэх форм хий...
 
-const users = [];
+// localStorage
+
+// localStorage.setItem("data" , [1 , 2 , 3 , 4]);
+
 
 // user = {
 //     name: '',
@@ -25,3 +40,5 @@ const users = [];
 //     pass: "",
 //     id: Math.random().toString().split('.')[1]
 // }
+
+// JS object notation
