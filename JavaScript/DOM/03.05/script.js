@@ -15,8 +15,10 @@ class User {
         this.lastname = lastname;
         this.number = number;
         this.password = password;
-    }
-}
+        this.id = Math.random().toString().split('.')[1]; 
+    };
+};
+
 const users = [];
 
 btn.addEventListener('click' , function(event){
