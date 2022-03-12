@@ -9,6 +9,8 @@ const lastname = document.querySelector('#lastname');
 const number = document.querySelector('#number');
 const password = document.querySelector('#password');
 
+let users;
+init();
 class User {
     constructor(firstname , lastname , number , password){
         this.firstname = firstname;
@@ -19,14 +21,34 @@ class User {
     };
 };
 
-const users = [];
+function init(){
+    if(localStorage.users){
+        users = JSON.parse(localStorage.users);
+    } else {
+        users = [];
+    }
+}
+
 
 btn.addEventListener('click' , function(event){
     event.preventDefault();
-    const user = new User(firstname.value , lastname.value , number.value , password.value);
-    users.push(user);
-    localStorage.setItem("users" , JSON.stringify(users));
+    if(firstname.value.trim() !== '' && lastname.value.trim() !== '' && number.value.trim() !== '' && password.value.trim() !== '') {
+        const user = new User(firstname.value , lastname.value , number.value , password.value);
+        users.push(user);
+        clearForm();
+        localStorage.setItem("users" , JSON.stringify(users));
+        alert('burtgegdlee!')
+    } else {
+        alert('invalid input');
+    }
 });
+
+function clearForm(){
+    firstname.value = '';
+    lastname.value = '';
+    number.value = '';
+    password.value = '';
+}
 
 // хэрэглэгч бүртгэх форм хий...
 
