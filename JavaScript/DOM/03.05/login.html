@@ -7,6 +7,45 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input id="email" type="text" placeholder="email">
+    <input id="password" type="password" placeholder="password">
+    <input id="loginBtn" type="button" value="login">
+
+    <script>
+        const email = document.querySelector("#email")
+        const password = document.querySelector("#password")
+        const loginBtn = document.querySelector("#loginBtn")
+        var users;
+
+        init()
+        function init(){
+            if(localStorage.users){
+                users = JSON.parse(localStorage.users)
+            } else {
+                users = []
+            }
+
+            if(localStorage.loggedUser){
+                location.pathname = '/profile.html'
+            }
+        }
+
+        loginBtn.addEventListener('click' , () => {
+            const user = users.find(usr => usr.email === email.value);
+            if(!user){
+                alert('email esvel nuuts ug buruu bna!')
+            } else {
+                if(user.password == password.value){
+                    localStorage.setItem('loggedUser' , JSON.stringify(user));
+                    location.pathname = '/profile.html';
+                } else {
+                    alert('email esvel nuuts ug buruu bna!')
+                }
+            }
+        })
+
+        // location
+
+    </script>
 </body>
 </html>
