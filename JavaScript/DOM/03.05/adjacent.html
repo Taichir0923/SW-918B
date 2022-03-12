@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+        }
+        .item {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-bottom: 1rem;
+            background-color: #ccc;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .item button {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <input id="text" type="text">
+    <input id="btn" type="button" value="insert">
+    <div class="container">
+        <!-- <div class="item">
+            <p>value</p>
+            <button>&times;</button>
+        </div> -->
+    </div>
+    <script>
+        // insertAdjacentHTML
+        const textInput = document.querySelector('#text');
+        const btn = document.querySelector('#btn');
+        const container = document.querySelector('.container');
+
+        let todos = [];
+
+        renderTodos(todos);
+
+        function renderTodos(list){
+            container.innerHTML = '';
+            list.forEach(item => {
+                container.insertAdjacentHTML('afterbegin' , `
+                    <div class="item">
+                        <p>${item.title}</p>
+                        <input hidden disabled value=${item.id} >
+                        <button id="delete">&times;</button>
+                    </div>
+                `)
+            })
+        }
+
+        btn.addEventListener('click' , () => {
+            const todo = {
+                title: textInput.value,
+                completed: false,
+                id: Math.random().toString().split('.')[1]
+            }
+
+            if(textInput.value.trim() !== ''){
+                todos.push(todo);
+                textInput.value = '';
+                renderTodos(todos);
+            } else {
+                alert('invalid input')
+            }
+        })
+
+        document.addEventListener('click' , e => {
+            if(e.target.id == "delete"){
+                const todoId = e.target.previousElementSibling.value;
+                const updatedTodo = todos.filter(todo => todo.id !== todoId);
+                todos = [...updatedTodo];
+                renderTodos(todos)
+            }
+        })
+
+        // afterbegin
+        // beforebegin
+        // afterend
+        // beforeend
+    </script>
+</body>
+</html>
