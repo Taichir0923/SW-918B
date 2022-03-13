@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .backdrop {
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+        }
+
+        .backdrop .modal {
+            transition: all .3s ease-in-out;
+            transform: translateY(-200px);
+        }
+
+        .open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .open .modal {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="openModal absolute rounded-lg top-4 right-4 bg-indigo-400 text-white py-3 px-6">
+        Орлого , Зарлага бүртгэх
+    </div>
+
+    <div class="backdrop fixed w-full h-screen z-30 bg-black top-0 left-0 bg-opacity-60 flex items-center justify-center">
+        <div class="modal w-[600px] p-4 bg-white rounded-xl">
+            <div class="w-full flex gap-4 items-center">
+                <div class="w-1/2">
+                    <label class="font-bold mb-1" for="description">Тайлбар</label>
+                    <input id="description" type="text" placeholder="Тайлбар" class="w-full p-2 rounded-md bg-gray-100">
+                </div>
+                <div class="w-1/2">
+                    <label class="font-bold mb-1" for="amount">Мөнгөн дүн</label>
+                    <div class="flex items-center">
+                        <select class="p-[0.52rem] bg-gray-100 rounded-l-md focus:outline-none" id="type">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                        <input id="amount" type="text" placeholder="Тайлбар" class="w-full focus:outline-none p-2 rounded-r-md bg-gray-100">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mt-2">
+                <label for="date" class="font-bold mb-1">Он сар өдөр</label>
+                <input id="date" type="date" class="w-full bg-gray-100 p-2">
+            </div>
+            <div class="w-full mt-4 flex items-center gap-2 justify-end">
+                <button class="close bg-red-400 w-[130px] text-white rounded-lg py-3 px-6">Болих</button>
+                <button class="close bg-green-400 w-[130px] text-white rounded-lg py-3 px-6">Бүртгэх</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="balance w-[400px] font-bold h-48 rounded-lg gap-4 flex-col mx-auto mt-16 flex justify-center items-center bg-green-400 text-white">
+        <p class="text-3xl">Үлдэгдэл: </p>
+        <p class="amount text-4xl">12345</p>
+    </div>
+
+    <div class="w-full px-8 flex items-center font-bold justify-between mt-8">
+        <div class="zarlaga px-8 py-4 flex items-center rounded-lg gap-2 bg-red-400 text-white">
+            <p>Нийт зарлага: </p>
+            <p>78790</p>
+        </div>
+        <div class="orlogo px-8 py-4 flex items-center rounded-lg gap-2 bg-green-400 text-white">
+            <p>Нийт орлого: </p>
+            <p>78790</p>
+        </div>
+    </div>
+
+    <div class="w-full px-8 flex items-center font-bold justify-between mt-8">
+        <select class="zarlaga px-8 py-4 flex items-center rounded-lg gap-2 bg-indigo-400 text-white">
+            <option value="all">Бүгд</option>
+            <option value="income">Орлого</option>
+            <option value="expence">Зарлага</option>
+        </select>
+        <select class="zarlaga px-8 py-4 flex items-center rounded-lg gap-2 bg-blue-400 text-white">
+            <option value="increate">Багаас их рүү</option>
+            <option value="decrease">Ихээс бага руу</option>
+            <option value="date">Он сар</option>
+        </select>
+    </div>
+
+    <div class="px-8 w-full mt-8">
+        <table class="w-full border-t-2 border-[#333]">
+            <thead>
+                <tr class="border-b-2 border-[#333]">
+                    <th class="w-4/6 px-4 py-2 text-left">Тайлбар</th>
+                    <th class="w-1/6 px-4 py-2">Мөнгөн дүн</th>
+                    <th class="w-1/6 px-4 py-2">Он сар өдөр</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="flex gap-2 px-4 text-green-500 py-2 items-center">
+                        <p class="font-bold">Хувьцаа</p>
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </td>
+                    <td class="text-green-500 text-center">
+                        56789
+                    </td>
+                    <td class="font-[500] text-[#666] text-center">2022-02-15</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="flex gap-2 px-4 text-red-400 py-2 items-center">
+                        <p class="font-bold">Утас авсан</p>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </td>
+                    <td class="text-red-500 text-center">
+                        56789
+                    </td>
+                    <td class="font-[500] text-[#666] text-center">2022-02-15</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

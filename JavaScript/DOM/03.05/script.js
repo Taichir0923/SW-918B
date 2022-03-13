@@ -71,3 +71,15 @@ function clearForm(){
 // JS object notation
 
 // github.com/taichir0923/sw-918b
+
+
+// Бие даалт
+// 0. User registration /zurag , email , number , pass , id/ , email number davtagdahgui bh
+// 1. User login /email , pass/
+// 2. profile huudas 
+// 3. article uusgeh /created date , title , body , id , userId/
+// 4. profile huudas dotor tuhain hereglegchiin article haragdah
+// 5. article unshih huudas uusgeh /niitlegchiin medeelel , article , comment (henii comment?)/ 
+// 6. time line uusgeh - buh article haragdah
+// 7. profile - busad hereglegchiin profile huudas ruu oroh
+// 8. comment bichih // userId , articleId
