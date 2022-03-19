@@ -18,7 +18,7 @@ class BudgetApp {
     budgetList = [];
     constructor(){
         this.listenEvents();
-        this.updateUI();
+        this.updateUI(this.budgetList);
     }
 
     openModal(){
