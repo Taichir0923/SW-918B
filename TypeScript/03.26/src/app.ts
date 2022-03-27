@@ -116,8 +116,30 @@ const member1:NewType = {
     hobbies: ["reading"]
 }
 
-console.log(member);
+// console.log(member);
 
 // 1. 2 ширхэг обжект параметер хэлбэрээр аваад, тухайн обжектуудыг нэгтгээд буцаадаг функц бич...
 // оролт: {ner: "bla"} , {nas: 12}
 // гаралт: {ner: "bla" , nas: 12}
+interface Obj1 {
+    ner: string
+};
+
+
+interface Obj2 {
+    nas: number;
+    mergejil?: string
+}
+
+interface Obj extends Obj1 , Obj2 {}
+// type Obj = Obj1 & Obj2
+var b:Obj = {
+    ner: "",
+    nas: 34
+}
+
+function mergeObject (a: Obj1 , b: Obj2):Obj{
+    return Object.assign(a , b)
+}
+
+console.log(mergeObject({ner: "Narada"} , {nas: 24 , mergejil: "designer"}));

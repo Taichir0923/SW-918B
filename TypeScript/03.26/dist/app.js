@@ -19,7 +19,13 @@ const member1 = {
     },
     hobbies: ["reading"]
 };
-console.log(member);
-// 1. 2 ширхэг обжект параметер хэлбэрээр аваад, тухайн обжектуудыг нэгтгээд буцаадаг функц бич...
-// оролт: {ner: "bla"} , {nas: 12}
-// гаралт: {ner: "bla" , nas: 12}
+;
+// type Obj = Obj1 & Obj2
+var b = {
+    ner: "",
+    nas: 34
+};
+function mergeObject(a, b) {
+    return Object.assign(a, b);
+}
+console.log(mergeObject({ ner: "Narada" }, { nas: 24, mergejil: "designer" }));
