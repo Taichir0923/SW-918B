@@ -3,6 +3,8 @@ import Container from "../components/Container";
 import AnimeCard from "../components/AnimeCard";
 import {animeList} from '../data/dummy';
 import Banner from "../components/Banner";
+import Button from "../components/Button";
+import Input from "../components/Input";
 
 const App = () => {
     return <div className="w-full">
@@ -16,7 +18,22 @@ const App = () => {
                         })
                     }
                 </div>
-                <Banner />
+                <div className="my-8 flex items-center gap-4">
+                    <Button title="Danger" color="#f00" />
+                    <Button title="Warning" color="#ff0" />
+                    <Button title="Success" color="#0f0" />
+                    <Button title="Primary" color="#00f" />
+                    <Button title="Light" light/>
+                    <Button title="Dark"/>
+                </div>
+
+                <div className="my-8">
+                    <div className="w-[300px]">
+                        <Input place="Email" />
+                    </div>
+                </div>
+
+                <Banner bannerValue="New Banner!" />
             </Container>
         </main>
     </div>
