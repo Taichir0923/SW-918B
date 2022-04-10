@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import MyComponent from './views/App';
 
-ReactDOM.render(
-  <MyComponent />,
-  document.getElementById('root')
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+  <MyComponent />
 );
