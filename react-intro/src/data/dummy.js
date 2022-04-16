@@ -54,4 +54,17 @@ export const animeList = [
  * hook => useState , useEffect
  * event Handler
  * 
+ * 
+ * useContext
+ * useReducer
+ * 
+ * 
+ * customHook
+ * 
+ * 
+ * redux
+ * 
+ * 
+ * Гэрт: Түдү лист хийх... Фильтер , устгадаг байх
+ * 
  */
