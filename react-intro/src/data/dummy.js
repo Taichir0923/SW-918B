@@ -48,3 +48,10 @@ export const animeList = [
         url: "https://www.mnfansubs.net/resource/mnfansubs/image/2020/09/26/5zglg6vpback9hmm/DBS_015_m.jpg"
     },
 ]
+/**
+ * 
+ * state , props , effect
+ * hook => useState , useEffect
+ * event Handler
+ * 
+ */
