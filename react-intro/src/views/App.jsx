@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Header from "../components/Menu";
 import Container from "../components/Container";
 import AnimeCard from "../components/AnimeCard";
@@ -6,13 +6,17 @@ import { animeList } from '../data/dummy';
 import Banner from "../components/Banner";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import { Link } from 'react-router-dom';
+import useFetch from '../hooks/useFetch';
 
 const App = () => {
     const [banner, setBanner] = useState(() => "Initial");
     const [inputValue, setInputValue] = useState(() => "");
     const [show, hide] = useState(false);
-    const [users, setUsers] = useState(() => []);
-    const [loader, setLoader] = useState(false);
+    // const [users, setUsers] = useState(() => []);
+    // const [loader, setLoader] = useState(false);
+    const input = useRef();
+    const {data: users , loading: loader} = useFetch('https://jsonplaceholder.typicode.com/users')
     const dangerBtn = () => {
         setBanner(inputValue)
         setInputValue("");
@@ -21,23 +25,23 @@ const App = () => {
     const bannerValueHandler = (event) => {
         setInputValue(event.target.value)
     }
-    useEffect(() => {
-        async function getData() {
-            try {
-                setLoader(true);
-                const response = await fetch('https://jsonplaceholder.typicode.com/users');
-                const result = await response.json();
-                if (result) {
-                    setLoader(false);
-                    setUsers(result);
-                }
-            } catch (err) {
-                setLoader(false);
-            }
-        }
+    // useEffect(() => {
+    //     async function getData() {
+    //         try {
+    //             setLoader(true);
+    //             const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    //             const result = await response.json();
+    //             if (result) {
+    //                 setLoader(false);
+    //                 setUsers(result);
+    //             }
+    //         } catch (err) {
+    //             setLoader(false);
+    //         }
+    //     }
 
-        getData();
-    }, []);
+    //     getData();
+    // }, []);
 
     useEffect(() => {
         document.title = "Home"
@@ -55,7 +59,7 @@ const App = () => {
                 </div>
                 <div className="my-8 flex flex-wrap items-center gap-4">
                     <Button click={dangerBtn} title="Danger" color="#f00" />
-                    <Button title="Warning" color="#ff0" />
+                    <Button click={() => setBanner(input.current.value)} title="Warning" color="#ff0" />
                     <Button title="Success" color="#0f0" />
                     <Button title="Primary" color="#00f" />
                     <Button title="Light" light />
@@ -72,13 +76,17 @@ const App = () => {
                     </div>
                 </div>
 
+                <input ref={input} type="text" className='border mb-4 border-black' />
+
                 <Banner bannerValue={banner} />
                 <div className='w-full'>
                     {
                         loader ? <p>loading</p> : users?.map((user, index) => (
-                            <li key={index} className='w-full py-2 px-4 my-2'>
-                                {user.name}
-                            </li>
+                            <Link key={index} to={`/about?user=${user.id}`}>
+                                <li className='w-full py-2 px-4 my-2'>
+                                    {user.name}
+                                </li>
+                            </Link>
                         ))
                     }
                 </div>

@@ -61,10 +61,16 @@ export const animeList = [
  * 
  * customHook
  * 
+ * useRef
+ * 
+ * virtual dom
  * 
  * redux
  * 
  * 
  * Гэрт: Түдү лист хийх... Фильтер , устгадаг байх
+ * 
+ * 
+ * react-router-dom
  * 
  */

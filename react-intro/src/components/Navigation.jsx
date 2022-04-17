@@ -4,7 +4,7 @@ const Navigation = props => {
         <ul className="font-bold md:flex text-xl px-4 hidden items-center">
             {
                 props.items?.map((item , index) => {
-                    return <NavItem key={`item-${index}`} title={item} />
+                    return <NavItem path={item.path} key={`item-${index}`} title={item.title} />
                 })
             }
         </ul>

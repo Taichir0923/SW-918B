@@ -1,6 +1,18 @@
 import Navigation from './Navigation';
 
-const headerItems = ['Home' , 'About' , 'Service' , 'Contact'];
+const headerItems = [{
+    title: 'Home',
+    path: "/"
+} , {
+    title: 'About',
+    path: '/about'
+} , {
+    title: 'Service',
+    path: '/service'
+} , {
+    title: 'Contact',
+    path: '/contact'
+}];
 
 const Header = (props) => {
     return <header className="w-full text-white bg-red-400 flex items-center justify-between">
