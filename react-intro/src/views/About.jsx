@@ -20,4 +20,4 @@ const About = () => {
 export default About;
 // React fragment
 
-// posts => (ng shirheg post (comment)) , albums => (ng shirheg album (zurag)) , todos
+// posts => (ng shirheg post (comment)) , albums => (ng shirheg album (zurag)) , todos;
