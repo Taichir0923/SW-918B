@@ -70,7 +70,11 @@ export const animeList = [
  * 
  * Гэрт: Түдү лист хийх... Фильтер , устгадаг байх
  * 
+ * context - redux
  * 
- * react-router-dom
+ * useReducer - hook
+ * useState
+ * hoc - higher order function
+ * render props 
  * 
  */
