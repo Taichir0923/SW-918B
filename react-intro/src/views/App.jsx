@@ -8,6 +8,7 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import Test from '../renderProps';
 
 const App = () => {
     const [banner, setBanner] = useState(() => "Initial");
@@ -89,6 +90,15 @@ const App = () => {
                             </Link>
                         ))
                     }
+                </div>
+
+                <div className='my-8'>
+                    <p>render props:</p>
+                    <Test render={(data) => {
+                        return <div>
+                            <p>{data}</p>
+                        </div>
+                    }} />
                 </div>
             </Container>
         </main>
