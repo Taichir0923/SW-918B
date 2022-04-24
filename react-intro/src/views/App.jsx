@@ -10,12 +10,17 @@ import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import Test from '../renderProps';
 
+import { useSelector , useDispatch } from 'react-redux';
+import { getUsers } from '../redux/actions/user';
+
+
 const App = () => {
+    const dispatch = useDispatch();
     const [banner, setBanner] = useState(() => "Initial");
     const [inputValue, setInputValue] = useState(() => "");
     const [show, hide] = useState(false);
-    // const [users, setUsers] = useState(() => []);
-    // const [loader, setLoader] = useState(false);
+    const {data , loading , error} = useSelector(state => state.userState);
+    
     const input = useRef();
     const {data: users , loading: loader} = useFetch('https://jsonplaceholder.typicode.com/users')
     const dangerBtn = () => {
@@ -46,7 +51,18 @@ const App = () => {
 
     useEffect(() => {
         document.title = "Home"
-    } , [])
+    } , []);
+
+    useEffect(() => {
+        dispatch(getUsers())
+    } , [dispatch]);
+
+    useEffect(() => {
+        if(data){
+            console.log('users' , data);
+        }
+    } , [data])
+
     return <div className="w-full">
         <Header title="MNFANSUBS" />
         <main className="w-full py-[1.5rem]">

@@ -5,7 +5,7 @@ const headerItems = [{
     path: "/"
 } , {
     title: 'Hook',
-    path: '/about'
+    path: '/about?user=1'
 } , {
     title: 'Reducer',
     path: '/service'

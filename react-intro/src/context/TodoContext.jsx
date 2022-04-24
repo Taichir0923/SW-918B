@@ -1,4 +1,4 @@
-import {useReducer , createContext} from 'react';
+import {useReducer , createContext , useState} from 'react';
 
 export const TodoContext = createContext();
 const initialState = [
@@ -9,6 +9,8 @@ const initialState = [
     }
 ]
 const TodoItems = ({children}) => {
+    const [isUpdate , setIsUpdate] = useState(false);
+    const [updateTodo , setUpdateTodo] = useState(null);
     const todoReducer = (state = initialState , action) => {
         switch(action.type){
             case "INSERT":
@@ -19,6 +21,16 @@ const TodoItems = ({children}) => {
                 }]
             case "DELETE":
                 return state.filter(todo => todo.id !== action.id);
+            case "UPDATE":
+                const updateList = [...state];
+                const todoIndex = state.findIndex(todo => todo.id === action.id);
+
+                updateList[todoIndex] = {
+                    ...state[todoIndex],
+                    ...(action.name ? {name: action.name} : {}),
+                    ...(action.completed ? {completed: action.completed} : {})
+                };
+                return updateList;
             default: return state;
         }
     }
@@ -26,7 +38,11 @@ const TodoItems = ({children}) => {
 
     const contextValue = {
         todos,
-        dispatchTodoAction
+        dispatchTodoAction,
+        isUpdate,
+        setIsUpdate,
+        updateTodo,
+        setUpdateTodo
     }
 
     return <TodoContext.Provider value={contextValue}>
