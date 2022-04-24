@@ -13,7 +13,7 @@ const About = () => {
         console.log(data)
     }, [data])
     return <Fragment>
-        <Header title="About" />
+        <Header title="Hook" />
     </Fragment>
 }
 

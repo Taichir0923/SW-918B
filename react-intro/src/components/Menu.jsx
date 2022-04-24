@@ -4,13 +4,13 @@ const headerItems = [{
     title: 'Home',
     path: "/"
 } , {
-    title: 'About',
+    title: 'Hook',
     path: '/about'
 } , {
-    title: 'Service',
+    title: 'Reducer',
     path: '/service'
 } , {
-    title: 'Contact',
+    title: 'Context',
     path: '/contact'
 }];
 

@@ -67,7 +67,7 @@ const Service = () => {
     }
 
     return <Fragment>
-        <Header title="Service" />
+        <Header title="Reducer" />
         <main className='w-full'>
             <Container>
                 <div className="form flex my-4 gap-4 items-center">
